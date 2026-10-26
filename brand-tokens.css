@@ -1,0 +1,27 @@
+:root {
+  /* Yakuza Sales brand tokens; legacy aliases remain for migration compatibility. */
+  --yakuza-black: #070707;
+  --yakuza-charcoal: #151515;
+  --yakuza-red: #D3131B;
+  --yakuza-red-dark: #79070B;
+  --yakuza-bone: #E8DCC8;
+  --yakuza-white: #F7F4EE;
+  --yakuza-gray: #8C8983;
+  --yakuza-success: #76E05A;
+  --yakuza-font-display: "Arial Narrow", "Arial", sans-serif;
+  --yakuza-font-body: "Arial", sans-serif;
+  --prodavai-black: #070707;
+  --prodavai-charcoal: #151515;
+  --prodavai-red: #D3131B;
+  --prodavai-red-dark: #79070B;
+  --prodavai-bone: #E8DCC8;
+  --prodavai-white: #F7F4EE;
+  --prodavai-gray: #8C8983;
+  --prodavai-success: #76E05A;
+  --prodavai-font-display: "Arial Narrow", "Arial", sans-serif;
+  --prodavai-font-body: "Arial", sans-serif;
+}
+
+.prodavai-dark { background: var(--prodavai-black); color: var(--prodavai-bone); }
+.prodavai-accent { color: var(--prodavai-red); }
+.prodavai-success { color: var(--prodavai-success); }

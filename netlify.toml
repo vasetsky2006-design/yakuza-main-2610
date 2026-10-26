@@ -1,0 +1,93 @@
+functionsDirectory = "/Users/yakuza.mac/.codex/.chatgpt-projects/g-p-6a8ede89f08481919e2f8f566f378f02/production/yakuza-prodavai/netlify/functions"
+functionsDirectoryOrigin = "config"
+headersOrigin = "config"
+plugins = []
+redirects = []
+
+[build]
+publish = "/Users/yakuza.mac/.codex/.chatgpt-projects/g-p-6a8ede89f08481919e2f8f566f378f02/production/yakuza-prodavai/site"
+publishOrigin = "config"
+functions = "/Users/yakuza.mac/.codex/.chatgpt-projects/g-p-6a8ede89f08481919e2f8f566f378f02/production/yakuza-prodavai/netlify/functions"
+
+  [build.environment]
+  NODE_VERSION = "22"
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[functions]
+
+  [functions."*"]
+
+[[headers]]
+for = "/*"
+
+  [headers.values]
+  Content-Security-Policy = "default-src 'self'; base-uri 'none'; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'sha256-mTJ4cJaTm2Gw95GeXEpZdvEEY9ybh6FZu1bwcNE7QlY='; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests"
+  Permissions-Policy = "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "DENY"
+
+[[headers]]
+for = "/*.html"
+
+  [headers.values]
+  Cache-Control = "no-cache"
+
+[[headers]]
+for = "/*.css"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.js"
+
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/assets/*"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+
+[[headers]]
+for = "/*.png"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+
+[[headers]]
+for = "/*.jpg"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+
+[[headers]]
+for = "/*.svg"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+
+[[headers]]
+for = "/*.webp"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+
+[[headers]]
+for = "/*.pdf"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"

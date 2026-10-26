@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YAKUZA AI Control Tower — Vision Roadmap 2026–2036</title>
+  <meta name="description" content="Публічна карта розвитку YAKUZA AI Control Tower: від ProdaVAI та Revenue Intelligence до єдиного контрольного шару для компанії.">
+  <meta name="theme-color" content="#070707">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://yakuza.pp.ua/roadmap.html">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --black:#070707;
+      --charcoal:#151515;
+      --charcoal-2:#1c1c1c;
+      --bone:#E8DCC8;
+      --red:#D3131B;
+      --green:#76E05A;
+      --soft:rgba(232,220,200,.68);
+      --muted:rgba(232,220,200,.42);
+      --line:rgba(232,220,200,.12);
+      --line-strong:rgba(232,220,200,.22);
+      --shadow:0 30px 80px rgba(0,0,0,.42);
+    }
+    html{scroll-behavior:smooth;background:var(--black)}
+    body{
+      margin:0;
+      font-family:"Manrope",system-ui,sans-serif;
+      color:var(--bone);
+      background:
+        radial-gradient(circle at 76% 8%,rgba(211,19,27,.11),transparent 23rem),
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px),
+        var(--black);
+      background-size:auto,48px 48px,48px 48px,auto;
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:1000;
+      opacity:.18;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      mix-blend-mode:soft-light;
+    }
+    a{color:inherit;text-decoration:none}
+    button,a{touch-action:manipulation}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(7,7,7,.86);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand-lockup{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-lockup img{display:block;width:176px;max-width:46vw;height:auto}
+    .nav-links{display:flex;align-items:center;gap:10px}
+    .nav-link{
+      display:inline-flex;
+      align-items:center;
+      min-height:40px;
+      padding:0 14px;
+      border:1px solid var(--line);
+      color:var(--soft);
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      transition:.2s ease;
+    }
+    .nav-link:hover,.nav-link:focus-visible{color:var(--bone);border-color:rgba(211,19,27,.6);outline:none}
+    .hero{
+      position:relative;
+      padding:86px 0 68px;
+      border-bottom:1px solid var(--line);
+    }
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:56px;align-items:end}
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 18px;
+      color:var(--red);
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .kicker::before{content:"";width:36px;height:2px;background:var(--red)}
+    h1,h2,h3,p{margin-top:0}
+    h1{
+      margin-bottom:22px;
+      font-family:"Bebas Neue",Impact,sans-serif;
+      font-size:clamp(4rem,9vw,8rem);
+      line-height:.83;
+      letter-spacing:.01em;
+      text-transform:uppercase;
+      text-wrap:balance;
+    }
+    h1 span{color:var(--red)}
+    .hero-copy{
+      max-width:58rem;
+      margin:0;
+      color:var(--soft);
+      font-size:clamp(1rem,1.5vw,1.18rem);
+      line-height:1.75;
+    }
+    .hero-panel{
+      position:relative;
+      padding:26px;
+      border:1px solid var(--line-strong);
+      background:linear-gradient(180deg,rgba(28,28,28,.9),rgba(14,14,14,.96));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:4px;
+      background:var(--red);
+    }
+    .hero-panel-label{
+      display:block;
+      margin-bottom:12px;
+      color:var(--muted);
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .hero-panel strong{
+      display:block;
+      margin-bottom:10px;
+      font-family:"Bebas Neue",Impact,sans-serif;
+      font-size:2rem;
+      letter-spacing:.04em;
+    }
+    .hero-panel p{margin:0;color:var(--soft);font-size:.9rem}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      min-height:30px;
+      padding:0 10px;
+      border:1px solid var(--line);
+      color:var(--soft);
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .tag--active{border-color:rgba(118,224,90,.35);color:var(--green)}
+    .roadmap{
+      position:relative;
+      padding:78px 0 92px;
+    }
+    .roadmap::before{
+      content:"";
+      position:absolute;
+      left:calc(50% - 590px + 145px);
+      top:88px;
+      bottom:100px;
+      width:1px;
+      background:linear-gradient(var(--red),rgba(211,19,27,.2) 68%,transparent);
+    }
+    .era{
+      position:relative;
+      display:grid;
+      grid-template-columns:130px minmax(0,1fr);
+      gap:48px;
+      padding:0 0 72px;
+    }
+    .era:last-child{padding-bottom:0}
+    .era-meta{position:relative;padding-top:4px}
+    .era-dot{
+      position:absolute;
+      top:6px;
+      right:-23px;
+      width:14px;
+      height:14px;
+      border:3px solid var(--black);
+      outline:1px solid var(--red);
+      background:var(--red);
+      transform:rotate(45deg);
+      box-shadow:0 0 22px rgba(211,19,27,.3);
+    }
+    .era--future .era-dot{background:var(--charcoal);outline-color:rgba(232,220,200,.36);box-shadow:none}
+    .era-phase{
+      display:block;
+      color:var(--red);
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .era-year{
+      display:block;
+      margin-top:5px;
+      font-family:"Bebas Neue",Impact,sans-serif;
+      font-size:2rem;
+      letter-spacing:.04em;
+    }
+    .era-card{
+      padding:32px;
+      border:1px solid var(--line);
+      background:linear-gradient(160deg,rgba(24,24,24,.94),rgba(10,10,10,.98));
+      box-shadow:0 18px 48px rgba(0,0,0,.22);
+    }
+    .era--now .era-card{border-color:rgba(211,19,27,.4)}
+    .era-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:24px;
+      margin-bottom:26px;
+    }
+    .era-title{
+      margin:0;
+      font-family:"Bebas Neue",Impact,sans-serif;
+      font-size:clamp(2.3rem,4.4vw,4.2rem);
+      line-height:.92;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+    .era-subtitle{max-width:54rem;margin:10px 0 0;color:var(--soft);font-size:.96rem;line-height:1.7}
+    .direction{
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      min-height:30px;
+      padding:0 10px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:.63rem;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .direction--now{color:var(--green);border-color:rgba(118,224,90,.3)}
+    .module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .module{
+      position:relative;
+      min-height:154px;
+      padding:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.018);
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+    }
+    .module:hover,.module:focus-within{transform:translateY(-3px);border-color:rgba(211,19,27,.42);background:rgba(211,19,27,.035)}
+    .module-icon{
+      width:27px;
+      height:27px;
+      margin-bottom:18px;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.7;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      color:var(--red);
+    }
+    .module h3{margin:0 0 7px;font-size:.95rem;letter-spacing:.02em}
+    .module p{margin:0;color:var(--soft);font-size:.79rem;line-height:1.55}
+    .module--wide{grid-column:span 2}
+    .katana{
+      margin-top:14px;
+      padding:18px;
+      border:1px solid rgba(211,19,27,.24);
+      background:rgba(211,19,27,.035);
+    }
+    .katana-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .katana-head .module-icon{margin:0}
+    .katana-head strong{font-size:.86rem;letter-spacing:.08em;text-transform:uppercase}
+    .katana-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+    .flow-step{display:inline-flex;align-items:center;gap:8px;color:var(--soft);font-size:.72rem}
+    .flow-step:not(:last-child)::after{content:"→";color:var(--red);font-weight:800}
+    .principle{
+      margin-top:78px;
+      padding:42px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(90deg,rgba(211,19,27,.06),transparent 34%,rgba(255,255,255,.015));
+    }
+    .principle-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:42px;align-items:start}
+    .principle h2{
+      margin:0;
+      font-family:"Bebas Neue",Impact,sans-serif;
+      font-size:clamp(2.5rem,5vw,4.5rem);
+      line-height:.9;
+      text-transform:uppercase;
+    }
+    .loop{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+    .loop span{
+      display:inline-flex;
+      min-height:34px;
+      align-items:center;
+      padding:0 11px;
+      border:1px solid var(--line);
+      color:var(--soft);
+      font-size:.73rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+    }
+    .loop b{color:var(--red)}
+    .cta{
+      padding:74px 0 84px;
+      text-align:center;
+    }
+    .cta h2{
+      margin:0 auto 16px;
+      max-width:14ch;
+      font-family:"Bebas Neue",Impact,sans-serif;
+      font-size:clamp(3rem,6vw,5.4rem);
+      line-height:.9;
+      text-transform:uppercase;
+    }
+    .cta p{max-width:48rem;margin:0 auto 26px;color:var(--soft)}
+    .cta-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 20px;
+      border:1px solid var(--line-strong);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      transition:.2s ease;
+    }
+    .btn--primary{background:var(--red);border-color:var(--red);color:#fff}
+    .btn:hover,.btn:focus-visible{transform:translateY(-2px);outline:none;box-shadow:0 16px 34px rgba(0,0,0,.28)}
+    footer{padding:24px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:.74rem}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .footer-row a{color:var(--soft)}
+    @media(max-width:1050px){
+      .roadmap::before{left:calc(16px + 112px + 24px)}
+      .era{grid-template-columns:105px 1fr;gap:36px}
+      .module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .module--wide{grid-column:auto}
+    }
+    @media(max-width:760px){
+      .wrap{width:min(100% - 20px,1180px)}
+      .nav-inner{min-height:64px}
+      .nav-links .nav-link:first-child{display:none}
+      .brand-lockup img{width:148px;max-width:58vw}
+      .hero{padding:58px 0 48px}
+      .hero-grid{grid-template-columns:1fr;gap:28px}
+      h1{font-size:clamp(3.7rem,19vw,6rem)}
+      .roadmap{padding:58px 0 68px}
+      .roadmap::before{left:17px;top:66px;bottom:80px}
+      .era{grid-template-columns:1fr;gap:16px;padding:0 0 54px;padding-left:34px}
+      .era-meta{display:flex;align-items:baseline;gap:10px;padding:0}
+      .era-dot{left:-23px;right:auto;top:6px}
+      .era-year{font-size:1.65rem;margin:0}
+      .era-card{padding:22px 18px}
+      .era-head{display:block;margin-bottom:20px}
+      .direction{margin-top:14px;white-space:normal}
+      .module-grid{grid-template-columns:1fr}
+      .module{min-height:auto}
+      .principle{margin-top:54px;padding:30px 18px}
+      .principle-grid{grid-template-columns:1fr;gap:26px}
+      .cta{padding:58px 0 64px}
+      .cta-actions{display:grid;grid-template-columns:1fr}
+      .btn{width:100%}
+      .footer-row{align-items:flex-start;flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Основна навігація">
+    <div class="wrap nav-inner">
+      <a class="brand-lockup" href="/" aria-label="YAKUZA AI Control Tower — на головну">
+        <img src="/logo.svg?v=7.1.1-brand" alt="YAKUZA SALES" width="360" height="89">
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="/">Головна</a>
+        <a class='nav-link' href='/offer'>Revenue Audit</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">YAKUZA AI CONTROL TOWER · VISION 2036</p>
+          <h1>Продажі — точка входу.<br><span>Не межа системи.</span></h1>
+          <p class="hero-copy">Ми починаємо з проблем, за вирішення яких бізнес платить сьогодні. Далі з'єднуємо перевірені контури в один контрольний шар: дані → стандарт → дія → навчання → повторна перевірка → факт.</p>
+        </div>
+        <aside class="hero-panel" aria-label="Статус roadmap">
+          <span class="hero-panel-label">Як читати цю карту</span>
+          <strong>NOW ≠ VISION</strong>
+          <p>2026 — поточний фокус і перевірка бізнес-гіпотез. Дальні горизонти показують напрям розвитку та залежать від попиту, даних і retention.</p>
+          <div class="hero-tags">
+            <span class="tag tag--active">NOW · 2026</span>
+            <span class="tag">NEXT · 2027</span>
+            <span class="tag">VISION · 2036</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="roadmap" aria-label="Roadmap YAKUZA AI Control Tower">
+      <div class="wrap">
+        <article class="era era--now">
+          <div class="era-meta">
+            <span class="era-phase">NOW · PROOF</span>
+            <span class="era-year">2026</span>
+            <span class="era-dot" aria-hidden="true"></span>
+          </div>
+          <div class="era-card">
+            <div class="era-head">
+              <div>
+                <h2 class="era-title">Revenue Intelligence</h2>
+                <p class="era-subtitle">Доводимо один вузький цикл у продажах: знаходимо втрати, показуємо доказ, запускаємо дію і перевіряємо, чи змінився результат.</p>
+              </div>
+              <span class="direction direction--now">Current focus · validation</span>
+            </div>
+            <div class="module-grid">
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#sales"></use></svg>
+                <h3>ProdaVAI</h3>
+                <p>Перша комерційна вертикаль: sales quality, sales ops та measurable revenue actions.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#score"></use></svg>
+                <h3>Revenue Leak Audit</h3>
+                <p>Платний доказовий аудит: baseline, evidence, карта втрат і 30-денний action plan.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#training"></use></svg>
+                <h3>Yakuza Sales Bot</h3>
+                <p>Тренування конкретних sales-навичок і корекція поведінки менеджерів.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#control"></use></svg>
+                <h3>Sakura MVP</h3>
+                <p>Перший manager/owner control center: факти, ризики, пріоритети і наступні дії.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#timeline"></use></svg>
+                <h3>Control</h3>
+                <p>Перехід від разового аудиту до повторюваного контролю scorecard, змін і результатів.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="era era--future">
+          <div class="era-meta">
+            <span class="era-phase">NEXT · CORE</span>
+            <span class="era-year">2027</span>
+            <span class="era-dot" aria-hidden="true"></span>
+          </div>
+          <div class="era-card">
+            <div class="era-head">
+              <div>
+                <h2 class="era-title">Operational Core</h2>
+                <p class="era-subtitle">Підключаємо модулі тільки після того, як їхня функція доведена в реальній роботі. Не рій агентів заради рою.</p>
+              </div>
+              <span class="direction">Directional vision · subject to validation</span>
+            </div>
+            <div class="module-grid">
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#signals"></use></svg>
+                <h3>Shinobi</h3>
+                <p>Збирає дозволені сигнали, діалоги та події й приводить їх до робочої структури.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#standards"></use></svg>
+                <h3>Bushido</h3>
+                <p>Стандарти, QA-правила та перевірка фактичної поведінки проти погодженого стандарту.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#score"></use></svg>
+                <h3>Karma</h3>
+                <p>Score, trends і readiness для людей, процесів та AI-компонентів.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#training"></use></svg>
+                <h3>Dojo</h3>
+                <p>Корекційний шар: навчання людей, evals агентів, симуляції процесів і re-check.</p>
+              </div>
+              <div class="module module--wide">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#social"></use></svg>
+                <h3>KATANA · Social + Content</h3>
+                <p>AI Social Media Manager і creative workspace: контент, публікації, community/DM та сигнали для продажів.</p>
+                <div class="katana">
+                  <div class="katana-head">
+                    <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#social"></use></svg>
+                    <strong>KATANA workflow</strong>
+                  </div>
+                  <div class="katana-flow" aria-label="KATANA workflow">
+                    <span class="flow-step">Inspiration</span>
+                    <span class="flow-step">Content Studio</span>
+                    <span class="flow-step">Approval</span>
+                    <span class="flow-step">Publish</span>
+                    <span class="flow-step">Comments / DM</span>
+                    <span class="flow-step">Lead / Signal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="era era--future">
+          <div class="era-meta">
+            <span class="era-phase">EXPAND · CONNECT</span>
+            <span class="era-year">2028–2030</span>
+            <span class="era-dot" aria-hidden="true"></span>
+          </div>
+          <div class="era-card">
+            <div class="era-head">
+              <div>
+                <h2 class="era-title">Connected Company</h2>
+                <p class="era-subtitle">Не замінюємо CRM, телефонію чи робочі сервіси. Стаємо контрольним шаром поверх перевірених систем і з'єднуємо дані з діями.</p>
+              </div>
+              <span class="direction">Directional vision · subject to validation</span>
+            </div>
+            <div class="module-grid">
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#integrations"></use></svg>
+                <h3>Torii</h3>
+                <p>Gateway для CRM, телефонії, messengers, webhooks, APIs та third-party systems.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#orchestration"></use></svg>
+                <h3>Shogun</h3>
+                <p>Orchestration, permissions, costs, audit trail і governance для агентів та automation.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#forge"></use></svg>
+                <h3>Forge / Кузня</h3>
+                <p>White-label, repair, testing і release перевірених AI-компонентів.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#kaizen"></use></svg>
+                <h3>Kaizen Lab</h3>
+                <p>Process discovery, sandbox, forecast, cost of inaction і forecast-vs-actual verification.</p>
+              </div>
+              <div class="module module--wide">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#control"></use></svg>
+                <h3>Нові вертикалі</h3>
+                <p>Production, Education, HR / People, Service / Logistics — лише там, де є доменна проблема, доказ попиту й економіка впровадження.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="era era--future">
+          <div class="era-meta">
+            <span class="era-phase">INTELLIGENCE</span>
+            <span class="era-year">2031–2033</span>
+            <span class="era-dot" aria-hidden="true"></span>
+          </div>
+          <div class="era-card">
+            <div class="era-head">
+              <div>
+                <h2 class="era-title">Company Intelligence</h2>
+                <p class="era-subtitle">Крос-функціональні рішення з доказовим походженням: що відбулось, чому система так вважає, яку дію пропонує і як перевіриться результат.</p>
+              </div>
+              <span class="direction">Directional vision · subject to validation</span>
+            </div>
+            <div class="module-grid">
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#signals"></use></svg>
+                <h3>Shared Evidence Layer</h3>
+                <p>Факти, джерела, припущення, confidence та provenance замість магії в цифрах.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#control"></use></svg>
+                <h3>Decision Support</h3>
+                <p>Пріоритети й сценарії для керівника з human approval для критичних дій.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#score"></use></svg>
+                <h3>Benchmarks</h3>
+                <p>Порівняння процесів, команд і змін там, де дані справді дозволяють робити висновок.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="era era--future">
+          <div class="era-meta">
+            <span class="era-phase">VISION · TOWER</span>
+            <span class="era-year">2034–2036</span>
+            <span class="era-dot" aria-hidden="true"></span>
+          </div>
+          <div class="era-card">
+            <div class="era-head">
+              <div>
+                <h2 class="era-title">AI Control Tower</h2>
+                <p class="era-subtitle">Єдиний контрольний шар компанії: бачити факти, координувати перевірені AI-workflows, контролювати ризики й вимірювати результат без заміни кожної системи під ним.</p>
+              </div>
+              <span class="direction">Directional vision · subject to validation</span>
+            </div>
+            <div class="module-grid">
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#control"></use></svg>
+                <h3>Sakura · Business Control Center</h3>
+                <p>Один управлінський екран для людей, процесів, інтеграцій, AI та measurable outcomes.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#orchestration"></use></svg>
+                <h3>Human-approved Autonomy</h3>
+                <p>Автономність росте тільки там, де workflow перевірений, ризики контрольовані, а rollback існує.</p>
+              </div>
+              <div class="module">
+                <svg class="module-icon" aria-hidden="true"><use href="/icons.svg#forge"></use></svg>
+                <h3>Ecosystem</h3>
+                <p>White-label, reusable components і marketplace лише якщо retention та попит виправдовують платформний шар.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <section class="principle" aria-label="Незмінний цикл YAKUZA">
+          <div class="principle-grid">
+            <div>
+              <p class="kicker">Незмінне ядро</p>
+              <h2>Результат<br>на табло.</h2>
+            </div>
+            <div>
+              <div class="loop" aria-label="YAKUZA control loop">
+                <span>Observe</span><b>→</b>
+                <span>Standard</span><b>→</b>
+                <span>Evaluate</span><b>→</b>
+                <span>Action</span><b>→</b>
+                <span>Train</span><b>→</b>
+                <span>Re-check</span><b>→</b>
+                <span>Actual</span>
+              </div>
+              <p class="era-subtitle" style="margin-top:18px">Технології, моделі й сервіси можуть змінюватися. Цикл доказу не змінюється: baseline → зміна → вимірювання → факт.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <p class="kicker" style="justify-content:center">START WITH PROOF</p>
+        <h2>Не будуємо 2036 у 2026.</h2>
+        <p>Починаємо з однієї проблеми в продажах, за яку клієнт готовий платити зараз. Велика архітектура має право рости тільки з перевірених результатів.</p>
+        <div class="cta-actions">
+          <a class='btn btn--primary' href='/offer'>Подивитися Revenue Audit</a>
+          <a class='btn' href='/offer'>Поточні продукти</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 YAKUZA · AI CONTROL TOWER</span>
+      <span>Vision roadmap · not a release commitment</span>
+      <a href="/">На головну →</a>
+    </div>
+  </footer>
+</body>
+</html>
