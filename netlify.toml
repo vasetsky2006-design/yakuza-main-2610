@@ -1,32 +1,12 @@
-functionsDirectory = "/Users/yakuza.mac/.codex/.chatgpt-projects/g-p-6a8ede89f08481919e2f8f566f378f02/production/yakuza-prodavai/netlify/functions"
-functionsDirectoryOrigin = "config"
-headersOrigin = "config"
-plugins = []
-redirects = []
-
 [build]
-publish = "/Users/yakuza.mac/.codex/.chatgpt-projects/g-p-6a8ede89f08481919e2f8f566f378f02/production/yakuza-prodavai/site"
-publishOrigin = "config"
-functions = "/Users/yakuza.mac/.codex/.chatgpt-projects/g-p-6a8ede89f08481919e2f8f566f378f02/production/yakuza-prodavai/netlify/functions"
+  publish = "site"
+  command = "npm run build"
 
-  [build.environment]
+[build.environment]
   NODE_VERSION = "22"
 
-  [build.processing]
-
-    [build.processing.css]
-
-    [build.processing.html]
-
-    [build.processing.images]
-
-    [build.processing.js]
-
-  [build.services]
-
 [functions]
-
-  [functions."*"]
+  directory = "netlify/functions"
 
 [[headers]]
 for = "/*"
@@ -48,13 +28,13 @@ for = "/*.html"
 for = "/*.css"
 
   [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
+  Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
 for = "/*.js"
 
   [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
+  Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
 for = "/assets/*"
